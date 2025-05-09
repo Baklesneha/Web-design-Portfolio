@@ -1,0 +1,532 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+/* Rainbow Radial Background */
+body {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(255, 0, 0, 0.3) 20%, rgba(255, 255, 0, 0.3) 40%, rgba(0, 255, 0, 0.3) 60%, rgba(0, 255, 255, 0.3) 80%, rgba(0, 0, 255, 0.3) 100%);
+  animation: rainbowAnimation 15s infinite;
+}
+
+@keyframes rainbowAnimation {
+  0% {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(255, 0, 0, 0.3) 20%, rgba(255, 255, 0, 0.3) 40%, rgba(0, 255, 0, 0.3) 60%, rgba(0, 255, 255, 0.3) 80%, rgba(0, 0, 255, 0.3) 100%);
+  }
+  50% {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(0, 0, 255, 0.3) 20%, rgba(0, 255, 255, 0.3) 40%, rgba(0, 255, 0, 0.3) 60%, rgba(255, 255, 0, 0.3) 80%, rgba(255, 0, 0, 0.3) 100%);
+  }
+  100% {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(255, 0, 0, 0.3) 20%, rgba(255, 255, 0, 0.3) 40%, rgba(0, 255, 0, 0.3) 60%, rgba(0, 255, 255, 0.3) 80%, rgba(0, 0, 255, 0.3) 100%);
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color:BLACK;
+  padding: 1rem;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #4CAF50;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #282828;
+  min-height: 100vh;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-style: italic;  /* Italic Font for Name */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  padding: 10px 30px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #45a049;
+}
+
+/* Section Styles */
+.section {
+  padding: 60px 20px;
+  background-color:BLACK;
+  margin-bottom: 50px;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.skills .skill-set {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.skills .skill {
+  text-align: center;
+}
+
+.skills .skill h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.skills .progress-bar {
+  height: 10px;
+  width: 80%;
+  margin-top: 10px;
+  background-color: #555;
+  border-radius: 5px;
+}
+
+.skills .html {
+  width: 90%;
+  background-color: #f16529;
+}
+
+.skills .css {
+  width: 85%;
+  background-color: #2965f1;
+}
+
+.skills .js {
+  width: 80%;
+  background-color: #f0db4f;
+}
+
+/* Project Section */
+.projects {
+  text-align: center;
+  padding: 60px 20px;
+  background-color:#D0D5CE;
+  margin-bottom: 50px;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+/* Container for vertical Scroll */
+.project-slider {
+  display: flex;
+  overflow-y: auto;  /* Enable vertical scrolling */
+  scroll-snap-type: y mandatory;  /* Ensure that each project card snaps into place */
+  -webkit-overflow-scrolling: touch;  /* Smooth scrolling on touch devices */
+  gap: 20px;
+  padding: 10px 0;
+}
+
+/* Project Card */
+.project-card {
+  flex-shrink: 0;  /* Prevent the card from shrinking */
+  width: 250px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 0 15p BLACK;
+  scroll-snap-align: center;  /* Make sure each card snaps in the center */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);  /* Hover effect for 3D lift */
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);  /* Glowing effect on hover */
+}
+
+/* Neon Corner Effect on Cards */
+.project-card:before,
+.project-card:after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.project-card:before {
+  top: 0;
+  left: 0;
+  border-top-left-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.project-card:after {
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+/* Card Image */
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Project Title */
+.project-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #101010;
+  margin-bottom: 10px;
+}
+
+/* Project Description */
+.project-card p {
+  font-size: 1rem;
+  color: BLACK;
+  margin-bottom: 15px;
+}
+
+/* Add Neon Glow Animation */
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6), 0 0 25px rgba(0, 255, 255, 0.6), 0 0 35px rgba(0, 255, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.8), 0 0 35px rgba(0, 255, 255, 0.8), 0 0 45px rgba(0, 255, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 35px rgba(255, 0, 255, 1), 0 0 45px rgba(0, 255, 255, 1), 0 0 55px rgba(0, 255, 0, 1);
+  }
+}
+
+/* Button (if any) */
+.project-card .btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-top: 15px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background-color: #45a049;
+}
+
+
+/* Add Neon Glow Animation */
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6), 0 0 25px rgba(0, 255, 255, 0.6), 0 0 35px rgba(0, 255, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.8), 0 0 35px rgba(0, 255, 255, 0.8), 0 0 45px rgba(0, 255, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 35px rgba(255, 0, 255, 1), 0 0 45px rgba(0, 255, 255, 1), 0 0 55px rgba(0, 255, 0, 1);
+  }
+}
+
+/* Button (if any) */
+.project-card .btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-top: 15px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background-color: #45a049;
+}
+
+/* Contact Section */
+.contact .btn {
+  padding: 10px 30px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.contact .btn:hover {
+  background-color: #45a049;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  background-color:BLACK;
+  padding: 20px;
+  color: #888;
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: BLACK;
+  margin-bottom: 50px;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.contact .contact-box {
+  background-color: #333;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  animation: neonGlow 1.5s infinite alternate;
+}
+
+/* Neon Corner Effect */
+.contact .contact-box:before,
+.contact .contact-box:after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.contact .contact-box:before {
+  top: 0;
+  left: 0;
+  border-top-left-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.contact .contact-box:after {
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+/* Neon Glow Animation */
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6), 0 0 25px rgba(0, 255, 255, 0.6), 0 0 35px rgba(0, 255, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.8), 0 0 35px rgba(0, 255, 255, 0.8), 0 0 45px rgba(0, 255, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 35px rgba(255, 0, 255, 1), 0 0 45px rgba(0, 255, 255, 1), 0 0 55px rgba(0, 255, 0, 1);
+  }
+}
+
+/* Contact Info List */
+.contact-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-box ul li {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.contact-box ul li a {
+  color: #4CAF50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-box ul li a:hover {
+  color: #fff;
+}
+
+/* Button */
+.contact .btn {
+  padding: 10px 30px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-top: 20px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.contact .btn:hover {
+  background-color: #45a049;
+}
+
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #282828;
+  min-height: 100vh;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-style: italic;  /* Italic Font for Name */
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5), /* Small shadow */
+    0 0 25px rgba(255, 255, 255, 0.6), /* White glowing shadow */
+    0 0 40px rgba(0, 255, 255, 1), /* Cyan glowing shadow */
+    0 0 50px rgba(255, 0, 255, 1); /* Purple glowing shadow */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  padding: 10px 30px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #45a049;
+}
+/* Footer Styling */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left p {
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-right .social-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-right .social-link:hover {
+  color: #4CAF50; /* Change to your preferred hover color */
+}
